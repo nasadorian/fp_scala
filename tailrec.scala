@@ -1,5 +1,16 @@
 /** Exercise solutions for the book Functional Programming in Scala*/
 
+// Calculate factorial, 
+def factorial(n: Int): BigInt = {
+  @annotation.tailrec
+  def go(n: Int, acc: Int): BigInt = {
+    if (n <= 0) acc
+    else go(n - 1, n * acc)
+  }
+  go(n, 1)
+}
+
+
 // Return n-th Fibonacci number w/ tail call optimization
 def fib(n: Int): BigInt = {
   @annotation.tailrec
